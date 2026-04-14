@@ -1,0 +1,11 @@
+# compositor
+picom &
+
+# Wallpaper
+feh --bg-scale ~/nixos/home/openbox/bg.jpg &
+
+# panel
+tint2 &
+    
+# notificationMgr 
+dunst &

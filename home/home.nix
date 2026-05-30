@@ -25,10 +25,12 @@
     libreoffice
     system-config-printer
     featherpad
-    steam
     krita
+    steam
     qbittorrent
     zoom-us
+    file-roller
+    blueman
   ];
 }
   

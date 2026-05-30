@@ -15,10 +15,28 @@
 
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.configurationLimit = 5;
+    boot.loader = {
+      efi.canTouchEfiVariables = true;
 
+      timeout = 30;
+
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        useOSProber = false;
+
+        configurationLimit = 5;
+
+        theme = ./themes/HyperFluent;
+      };
+};
+  #garbage collector
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -31,6 +49,12 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
+  services.blueman.enable = true;
+
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -100,7 +124,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aiden = {
     isNormalUser = true;
-    description = "Aiden Barnes";
+    description = "Aiden";
     extraGroups = [ "networkmanager" "wheel" "lp" "lpadmin"];
     packages = with pkgs; [];
   };
@@ -117,6 +141,12 @@
      sddm-astronaut
      python3
   ];
+
+  # graphics
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

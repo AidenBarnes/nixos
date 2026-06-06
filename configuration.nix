@@ -28,7 +28,7 @@
 
         configurationLimit = 5;
 
-        theme = ./themes/HyperFluent;
+        theme = ./themes/crossgrub;
       };
 };
   #garbage collector
@@ -126,7 +126,7 @@
     isNormalUser = true;
     description = "Aiden";
     extraGroups = [ "networkmanager" "wheel" "lp" "lpadmin"];
-    packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
   # Allow unfree packages
@@ -134,6 +134,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
      vim 
      git

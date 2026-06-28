@@ -11,6 +11,7 @@
   imports = [
     ./openbox/openbox.nix
     ./KDE/kdepkgs.nix
+    ./misc/zsh.nix
   ];
 
   home.packages = with pkgs; [
@@ -36,24 +37,16 @@
     atlauncher
     direnv
     nix-direnv
+    mpv
+    signal-desktop
+    signal-cli
+    rawtherapee
+    noto-fonts-cjk-sans
   ];
-  
-  programs.zsh = {
+
+  programs.direnv = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -l";
-      edit = "sudo -e";
-      update = "cd $HOME/nixos && sudo nixos-rebuild switch --flake .#aeroplane";
-    };
-
-    history.size = 10000;
-    history.ignoreAllDups = true;
-    history.path = "$HOME/.zsh_history";
-    history.ignorePatterns = ["rm *" "pkill *" "cp *"];
+    nix-direnv.enable = true;
   };
 }
   

@@ -32,9 +32,7 @@
     };
 
     devShells.${system} = {
-      python = import ./devshells/python.nix {
-        inherit pkgs;
-      };
+      python = import ./shells/python.nix {inherit pkgs;};
     };
   };
 }

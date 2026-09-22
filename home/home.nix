@@ -34,7 +34,7 @@
     blueman
     openboard
     xournalpp
-    atlauncher
+    prismlauncher
     direnv
     nix-direnv
     mpv
@@ -42,6 +42,8 @@
     signal-cli
     rawtherapee
     noto-fonts-cjk-sans
+    gimp
+    brasero
   ];
 
   programs.direnv = {

@@ -141,6 +141,7 @@
      wget
      sddm-astronaut
      python3
+     mesa
   ];
 
   # graphics

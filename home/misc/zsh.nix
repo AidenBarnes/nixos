@@ -19,6 +19,8 @@
 
       "~" = "cd ~";
       ".." = "cd ..";
+
+      gad = "git add .";
     };
 
     oh-my-zsh = {

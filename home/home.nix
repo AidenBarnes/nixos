@@ -16,7 +16,6 @@
 
   home.packages = with pkgs; [
     papirus-icon-theme
-    alacritty
     firefox
     thunar
     spotify
@@ -44,11 +43,25 @@
     noto-fonts-cjk-sans
     gimp
     brasero
+    element-desktop
   ];
 
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+  };
+
+  programs.alacritty = {
+    enable = true;
+
+    settings = {
+      window = {
+        dimensions = {
+          columns = 120;
+          lines = 32;
+        };
+      };
+    };
   };
 }
   

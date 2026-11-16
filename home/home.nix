@@ -44,6 +44,11 @@
     gimp
     brasero
     element-desktop
+    aseprite
+    racket
+    r2modman
+    nicotine-plus
+    uxplay
   ];
 
   programs.direnv = {

@@ -16,11 +16,13 @@
       shd = "shutdown 0";
       e = "exit";
       cds = "cd $HOME/nixos";
-
       "~" = "cd ~";
       ".." = "cd ..";
-
-      gad = "git add .";
+      "vimhome" = "vim $HOME/nixos/home/home.nix";
+      "vimconf" = "vim $HOME/nixos/configuration.nix";  
+      "gad" = "git add .";
+      "gpu" = "git push -u";
+      "gs" = "git status";
     };
 
     oh-my-zsh = {

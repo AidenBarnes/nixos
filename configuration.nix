@@ -91,6 +91,17 @@
   services.avahi = {
     enable = true;
     nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      { from = 35000; to = 35002; }
+    ];
+
+    allowedUDPPortRanges = [
+      { from = 35000; to = 35002; }
+    ];
   };
 
   # sddm (deprecated for plasma 6+)

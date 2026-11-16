@@ -9,6 +9,11 @@ pkgs.mkShell {
       sympy
       matplotlib
       ipython
+      dataclasses
+      tkinter
+      json
+      markdown
+      pathlib
     ]))
   ];
 }
